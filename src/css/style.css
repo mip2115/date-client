@@ -1,0 +1,144 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: inherit; }
+
+body {
+  box-sizing: border-box; }
+
+.App {
+  position: relative; }
+
+.navigation-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-family: 'Josefin Sans', sans-serif;
+  position: absolute;
+  z-index: 1000;
+  width: 100%; }
+  .navigation-list:last-child {
+    border-right: none; }
+  .navigation-list li {
+    float: left;
+    border-right: 1px solid #616161;
+    font-size: 1.3rem; }
+    .navigation-list li a:link,
+    .navigation-list li a:visited {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      padding: 2rem 2.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: white;
+      transition: all .2s; }
+      .navigation-list li a:link:hover,
+      .navigation-list li a:visited:hover {
+        background-color: white;
+        color: #333; }
+      .navigation-list li a:link:target,
+      .navigation-list li a:visited:target {
+        color: #333; }
+      .navigation-list li a:link:active,
+      .navigation-list li a:visited:active {
+        color: #333; }
+    .navigation-list li.active a {
+      color: #333;
+      background-color: white; }
+
+/*
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Quattrocento', serif;
+font-family: 'Philosopher', sans-serif;
+
+*/
+.login-signup {
+  position: relative;
+  height: 100vh;
+  /*
+	&-box {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 5rem 3rem;
+
+		border: 2px solid rgb(40, 108, 255);
+
+		& input {
+			border: 2px solid rgb(40, 108, 255);
+			display: block;
+			width: 25rem;
+			margin: 2rem;
+			font-size: 1.5rem;
+			padding: 1rem;
+			outline: none;
+
+			border-radius: 6px;
+		}
+	}
+	*/ }
+  .login-signup-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 2rem; }
+    .login-signup-form input {
+      border-radius: 2px;
+      outline: none;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 1.5rem;
+      padding: 1rem .3em;
+      display: block;
+      width: 30rem;
+      display: block;
+      border: none;
+      border-bottom: 2px #c4c4c4 solid;
+      transition: all 0.15s; }
+      .login-signup-form input:not(last-child) {
+        margin-bottom: 1.5rem; }
+      .login-signup-form input:active, .login-signup-form input:focus {
+        border-bottom: 2px black solid; }
+      .login-signup-form input:last-child {
+        box-shadow: 0rem .15rem .15rem black;
+        cursor: pointer;
+        border-bottom: transparent; }
+        .login-signup-form input:last-child:active {
+          box-shadow: 0rem .1rem .1rem black;
+          transform: translateY(0.2rem); }
+    .login-signup-form-prompt {
+      font-size: 1.5rem;
+      font-family: 'Josefin Sans', sans-serif; }
+      .login-signup-form-prompt a:link,
+      .login-signup-form-prompt a:visited {
+        text-decoration: none;
+        color: #03035c; }
+  .login-signup-left {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    height: 100%;
+    background-image: linear-gradient(to right bottom, white, white); }
+  .login-signup-right {
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    height: 100%;
+    background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../images/image1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+  .login-signup .field-no-show {
+    display: none; }

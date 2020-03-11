@@ -1,0 +1,117 @@
+.login-signup {
+	//display: none;
+	//display: block;
+	//border: solid;
+	position: relative;
+	height: 100vh;
+
+	&-form {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+
+		padding: 2rem;
+
+		& input {
+			border-radius: 2px;
+			outline: none;
+			font-family: 'Josefin Sans', sans-serif;
+
+			font-size: 1.5rem;
+			padding: 1rem .3em;
+			display: block;
+			width: 30rem;
+			display: block;
+			//filter: brightness(98%);
+			border: none;
+			border-bottom: 2px rgb(196, 196, 196) solid;
+
+			&:not(last-child) {
+				margin-bottom: 1.5rem;
+			}
+
+			transition: all 0.15s;
+
+			&:active,
+			&:focus {
+				border-bottom: 2px black solid;
+			}
+
+			&:last-child {
+				box-shadow: 0rem .15rem .15rem black;
+				cursor: pointer;
+				border-bottom: transparent;
+
+				&:active {
+					box-shadow: 0rem .1rem .1rem black;
+					transform: translateY(0.2rem);
+				}
+
+				&:hover {
+				}
+			}
+		}
+
+		&-prompt {
+			font-size: 1.5rem;
+			font-family: 'Josefin Sans', sans-serif;
+
+			& a:link,
+			a:visited {
+				text-decoration: none;
+				color: rgb(3, 3, 92);
+			}
+		}
+	}
+
+	&-left {
+		position: relative;
+		display: inline-block;
+		width: 50%;
+
+		overflow: hidden;
+		height: 100%;
+		background-image: linear-gradient(to right bottom, rgba(rgb(255, 255, 255), 1), rgba(rgb(255, 255, 255), 1));
+	}
+
+	&-right {
+		display: inline-block;
+
+		width: 50%;
+		overflow: hidden;
+		height: 100%;
+
+		background-image: linear-gradient(to right bottom, rgba(white, 0), rgba(white, 0)), url("../images/image1.jpg");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.field-no-show {
+		display: none;
+	}
+	/*
+	&-box {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 5rem 3rem;
+
+		border: 2px solid rgb(40, 108, 255);
+
+		& input {
+			border: 2px solid rgb(40, 108, 255);
+			display: block;
+			width: 25rem;
+			margin: 2rem;
+			font-size: 1.5rem;
+			padding: 1rem;
+			outline: none;
+
+			border-radius: 6px;
+		}
+	}
+	*/
+}

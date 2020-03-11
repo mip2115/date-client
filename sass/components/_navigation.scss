@@ -1,0 +1,63 @@
+.navigation-list {
+	list-style-type: none;
+
+	margin: 0;
+	padding: 0;
+	overflow: hidden; // need this here to add height
+	background-color: #333;
+	font-family: 'Josefin Sans', sans-serif;
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+
+	&:last-child {
+		border-right: none;
+	}
+
+	li {
+		float: left;
+		border-right: 1px solid rgb(97, 97, 97);
+		font-size: 1.3rem;
+
+		& a:link,
+		a:visited {
+			display: block;
+			text-decoration: none;
+			text-align: center;
+			padding: 2rem 2.5rem;
+			text-decoration: none;
+			text-transform: uppercase;
+			//color: rgb(136, 136, 136);
+			color: white;
+
+			&:hover:not(&-active) {
+				background-color: white;
+				color: #333;
+				//color: white;
+			}
+
+			&:target {
+				color: #333;
+				//color: white;
+			}
+
+			transition: all .2s;
+
+			&:active {
+				color: #333;
+			}
+		}
+
+		&.active a {
+			color: #333;
+			background-color: white;
+		}
+	}
+}
+
+/*
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Quattrocento', serif;
+font-family: 'Philosopher', sans-serif;
+
+*/
