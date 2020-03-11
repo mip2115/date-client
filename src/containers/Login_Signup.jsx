@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setAlert } from '../actions/alert';
+import { setAuth } from '../actions/auth';
+import axios from 'axios';
 
 // so just render a different class and fade in
 class Login_Signup extends Component {
@@ -33,8 +35,26 @@ class Login_Signup extends Component {
 		});
 	}
 
-	handleSubmit(e) {
+	async handleSubmit(e) {
 		e.preventDefault();
+
+		try {
+			const data = {
+				email: this.state.email,
+				password: this.state.password
+			};
+			const res = await axios.post('api/user/login', data);
+			if (!res.data.result) throw new Error('Error');
+
+			//assert.ok(res.data.token, 'No token returned');
+
+			//const JWT = res.data.token;
+
+			//const res = await axios.post('api/user/create');
+			console.log(res.data);
+		} catch (e) {
+			console.log(e.response.data);
+		}
 
 		this.setState({
 			email: '',
@@ -43,10 +63,11 @@ class Login_Signup extends Component {
 			age: ''
 		});
 
-		this.props.setAlert('THIS IS AN ALERT');
+		//const res = axios.post();
+		//this.props.setAuth({this.state.email, this.props})
+		//this.props.setAlert('THIS IS AN ALERT');
 	}
 	render() {
-		console.log(this.props.alerts);
 		return (
 			<div className="login-signup">
 				<div className="login-signup-left">
@@ -119,9 +140,10 @@ class Login_Signup extends Component {
 }
 
 const mapStateToProps = (state) => ({
-	alerts: state.alerts
+	alerts: state.alerts,
+	auth: state.auth
 });
-export default connect(mapStateToProps, { setAlert })(Login_Signup);
+export default connect(mapStateToProps, { setAlert, setAuth })(Login_Signup);
 
 /**
  * <form onSubmit={this.handleSubmit}>

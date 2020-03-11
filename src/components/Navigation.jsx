@@ -31,7 +31,7 @@ class Navigation extends Component {
 						className={this.state.active == 'login' ? 'active' : ''}
 						style={{ float: 'right' }}
 					>
-						<a className="nav-login" name="login" href="#login">
+						<a name="login" href="#login">
 							Login
 						</a>
 					</li>
@@ -45,8 +45,12 @@ class Navigation extends Component {
 							About
 						</a>
 					</li>
-					<li className={this.state.active == 'contact' ? 'active' : ''} style={{ float: 'right' }}>
-						<a onClick={this.handleClick} name="contact" href="#contact">
+					<li
+						onClick={this.handleClick}
+						className={this.state.active == 'contact' ? 'active' : ''}
+						style={{ float: 'right' }}
+					>
+						<a name="contact" href="#contact">
 							Contact us
 						</a>
 					</li>
