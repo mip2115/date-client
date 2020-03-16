@@ -30,14 +30,17 @@ class App extends Component {
 				email: 'testUserSeven@example.com',
 				password: 'test123'
 			};
-			const res = await axios.post('api/user/login', data);
+			//const res = await axios.post('api/user/login', data);
+			//localStorage.setItem('jwt-token', res.data.msg);
+			console.log('GETTING: ');
+			console.log(localStorage.getItem('jwt-token'));
 
 			//assert.ok(res.data.token, 'No token returned');
 
 			//const JWT = res.data.token;
 
 			//const res = await axios.post('api/user/create');
-			console.log(res.data);
+			//console.log(res.data);
 		} catch (e) {
 			console.log(e.response.data);
 		}

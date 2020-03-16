@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { setAlert } from '../actions/alert';
 import { setAuth } from '../actions/auth';
 import axios from 'axios';
-
+import Signup from '../components/Signup';
+import Login from '../components/Login';
 // so just render a different class and fade in
 class Login_Signup extends Component {
 	constructor() {
@@ -20,7 +21,7 @@ class Login_Signup extends Component {
 
 		this.handleToggle = this.handleToggle.bind(this);
 
-		this.handleSubmit = this.handleSubmit.bind(this);
+		//this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 	}
 
@@ -35,39 +36,18 @@ class Login_Signup extends Component {
 		});
 	}
 
-	async handleSubmit(e) {
-		e.preventDefault();
-
-		try {
-			const data = {
-				email: this.state.email,
-				password: this.state.password
-			};
-			const res = await axios.post('api/user/login', data);
-			if (!res.data.result) throw new Error('Error');
-
-			//assert.ok(res.data.token, 'No token returned');
-
-			//const JWT = res.data.token;
-
-			//const res = await axios.post('api/user/create');
-			console.log(res.data);
-		} catch (e) {
-			console.log(e.response.data);
-		}
-
-		this.setState({
-			email: '',
-			password: '',
-			name: '',
-			age: ''
-		});
-
-		//const res = axios.post();
-		//this.props.setAuth({this.state.email, this.props})
-		//this.props.setAlert('THIS IS AN ALERT');
-	}
 	render() {
+		console.log(this.props.auth);
+		return (
+			<div className="login-signup">
+				<div className="login-signup-left">
+					{this.state.login && <Login handleToggle={this.handleToggle} />}
+					{!this.state.login && <Signup handleToggle={this.handleToggle} />}
+				</div>
+				<div className="login-signup-right" />
+			</div>
+		);
+		/*
 		return (
 			<div className="login-signup">
 				<div className="login-signup-left">
@@ -135,7 +115,9 @@ class Login_Signup extends Component {
 
 				<div className="login-signup-right" />
 			</div>
+			
 		);
+		*/
 	}
 }
 

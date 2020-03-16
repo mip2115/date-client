@@ -4,7 +4,7 @@
 	//border: solid;
 	position: relative;
 	height: 100vh;
-
+	/*
 	&-form {
 		position: absolute;
 		top: 50%;
@@ -64,6 +64,7 @@
 			}
 		}
 	}
+	*/
 
 	&-left {
 		position: relative;
@@ -88,9 +89,6 @@
 		background-repeat: no-repeat;
 	}
 
-	.field-no-show {
-		display: none;
-	}
 	/*
 	&-box {
 		position: absolute;

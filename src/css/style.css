@@ -16,6 +16,14 @@ body {
 .App {
   position: relative; }
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-35%); }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%); } }
+
 .navigation-list {
   list-style-type: none;
   margin: 0;
@@ -56,9 +64,110 @@ font-family: 'Quattrocento', serif;
 font-family: 'Philosopher', sans-serif;
 
 */
+.login-signup-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 2rem;
+  opacity: 1;
+  animation: fade .50s linear; }
+  .login-signup-form input {
+    border-radius: 2px;
+    outline: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem .3em;
+    display: block;
+    width: 30rem;
+    display: block;
+    border: none;
+    border-bottom: 2px #c4c4c4 solid;
+    transition: all 0.15s; }
+    .login-signup-form input:not(last-child) {
+      margin-bottom: 1.5rem; }
+    .login-signup-form input:active, .login-signup-form input:focus {
+      border-bottom: 2px black solid; }
+    .login-signup-form input:last-child {
+      box-shadow: 0rem .15rem .15rem black;
+      cursor: pointer;
+      border-bottom: transparent; }
+      .login-signup-form input:last-child:active {
+        box-shadow: 0rem .1rem .1rem black;
+        transform: translateY(0.2rem); }
+  .login-signup-form-prompt {
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif; }
+    .login-signup-form-prompt a:link,
+    .login-signup-form-prompt a:visited,
+    .login-signup-form-prompt a {
+      text-decoration: none;
+      color: #74748a; }
+
 .login-signup {
   position: relative;
   height: 100vh;
+  /*
+	&-form {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+
+		padding: 2rem;
+
+		& input {
+			border-radius: 2px;
+			outline: none;
+			font-family: 'Josefin Sans', sans-serif;
+
+			font-size: 1.5rem;
+			padding: 1rem .3em;
+			display: block;
+			width: 30rem;
+			display: block;
+			//filter: brightness(98%);
+			border: none;
+			border-bottom: 2px rgb(196, 196, 196) solid;
+
+			&:not(last-child) {
+				margin-bottom: 1.5rem;
+			}
+
+			transition: all 0.15s;
+
+			&:active,
+			&:focus {
+				border-bottom: 2px black solid;
+			}
+
+			&:last-child {
+				box-shadow: 0rem .15rem .15rem black;
+				cursor: pointer;
+				border-bottom: transparent;
+
+				&:active {
+					box-shadow: 0rem .1rem .1rem black;
+					transform: translateY(0.2rem);
+				}
+
+				&:hover {
+				}
+			}
+		}
+
+		&-prompt {
+			font-size: 1.5rem;
+			font-family: 'Josefin Sans', sans-serif;
+
+			& a:link,
+			a:visited {
+				text-decoration: none;
+				color: rgb(3, 3, 92);
+			}
+		}
+	}
+	*/
   /*
 	&-box {
 		position: absolute;
@@ -82,42 +191,6 @@ font-family: 'Philosopher', sans-serif;
 		}
 	}
 	*/ }
-  .login-signup-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    padding: 2rem; }
-    .login-signup-form input {
-      border-radius: 2px;
-      outline: none;
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 1.5rem;
-      padding: 1rem .3em;
-      display: block;
-      width: 30rem;
-      display: block;
-      border: none;
-      border-bottom: 2px #c4c4c4 solid;
-      transition: all 0.15s; }
-      .login-signup-form input:not(last-child) {
-        margin-bottom: 1.5rem; }
-      .login-signup-form input:active, .login-signup-form input:focus {
-        border-bottom: 2px black solid; }
-      .login-signup-form input:last-child {
-        box-shadow: 0rem .15rem .15rem black;
-        cursor: pointer;
-        border-bottom: transparent; }
-        .login-signup-form input:last-child:active {
-          box-shadow: 0rem .1rem .1rem black;
-          transform: translateY(0.2rem); }
-    .login-signup-form-prompt {
-      font-size: 1.5rem;
-      font-family: 'Josefin Sans', sans-serif; }
-      .login-signup-form-prompt a:link,
-      .login-signup-form-prompt a:visited {
-        text-decoration: none;
-        color: #03035c; }
   .login-signup-left {
     position: relative;
     display: inline-block;
@@ -134,5 +207,3 @@ font-family: 'Philosopher', sans-serif;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; }
-  .login-signup .field-no-show {
-    display: none; }

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-class Signup extends Component {
+class Login extends Component {
 	constructor() {
 		super();
 		this.state = {
 			email: '',
-			password: '',
-			name: '',
-			age: ''
+			password: ''
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,6 +49,12 @@ class Signup extends Component {
 		});
 	}
 
+	handleChange(e) {
+		this.setState({
+			[e.target.name]: e.target.value
+		});
+	}
+
 	render() {
 		return (
 			<div className="login-signup-form">
@@ -69,28 +73,14 @@ class Signup extends Component {
 						value={this.state.password}
 						onChange={this.handleChange}
 					/>
-					<input
-						placeholder="name"
-						type="text"
-						name="name"
-						value={this.state.name}
-						onChange={this.handleChange}
-					/>
-					<input
-						placeholder="age"
-						type="text"
-						name="age"
-						value={this.state.age}
-						onChange={this.handleChange}
-					/>
 
-					<input type="submit" value="Get started" />
+					<input type="submit" value="Login" />
 				</form>
 				<br />
 				<p className="login-signup-form-prompt">
-					Have an account?{' '}
+					Need an account?{' '}
 					<a onClick={this.props.handleToggle} href="#">
-						Log in
+						Signup
 					</a>
 				</p>
 			</div>
@@ -98,4 +88,4 @@ class Signup extends Component {
 	}
 }
 
-export default Signup;
+export default Login;
