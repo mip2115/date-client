@@ -3,3 +3,4 @@ export const REMOVE_ALERT = 'REMOVE_ALERT';
 export const FETCH_PROFILES = 'FETCH_PROFILES';
 export const FETCH_MERCHANTS = 'FETCH_MERCHANTS';
 export const SET_AUTH = 'SET_AUTH';
+export const SET_PAGE = 'SET_PAGE';

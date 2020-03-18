@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { setAuth } from '../actions/auth';
+
 class Login extends Component {
 	constructor() {
 		super();
@@ -20,6 +23,14 @@ class Login extends Component {
 	async handleSubmit(e) {
 		e.preventDefault();
 
+		if (this.props.auth.JWT != null) {
+			this.props.setAuth(null);
+		} else if (this.props.auth.JWT == null) {
+			this.props.setAuth('XXX', 'email.com');
+			//window.location.href = '/discover';
+		}
+
+		/*
 		try {
 			const data = {
 				email: this.state.email,
@@ -39,13 +50,12 @@ class Login extends Component {
 			///console.log(res.data);
 		} catch (e) {
 			console.log(e.response.data);
-		}
+        }
+        */
 
 		this.setState({
 			email: '',
-			password: '',
-			name: '',
-			age: ''
+			password: ''
 		});
 	}
 
@@ -88,4 +98,9 @@ class Login extends Component {
 	}
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+	alerts: state.alerts,
+	auth: state.auth
+});
+
+export default connect(mapStateToProps, { setAuth })(Login);

@@ -1,0 +1,35 @@
+/*.profile {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	height: 60%;
+	width: 35%;
+    border: solid;
+    
+}
+*/
+
+.profile {
+	width: 60%;
+	display: block;
+
+	margin: 0 auto;
+	padding: 6rem 3rem;
+	background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+	border-radius: 2px;
+	position: relative;
+	&-header {
+		font-size: 2rem;
+		font-weight: 300;
+		padding: 1.5rem 0;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+
+	&-img {
+		width: 100%;
+		height: auto;
+		border-radius: 4px;
+		padding: 1rem 0;
+	}
+}

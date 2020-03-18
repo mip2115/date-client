@@ -3,20 +3,21 @@ import { connect } from 'react-redux';
 import { setAlert } from '../actions/alert';
 import { setAuth } from '../actions/auth';
 import { setPage } from '../actions/page';
+import Profile from '../components/Profile';
+import Info from '../components/Info';
 
-class Home extends Component {
+class Discover extends Component {
 	constructor() {
 		super();
 	}
 
-	componentDidMount() {
-		//this.props.setPage('home');
-	}
-
 	render() {
-		console.log('THIS IS HOME');
-		return <div className="home">HomeHomeHomeHomeHome</div>;
+		return (
+			<div className="discover">
+				<Profile />
+			</div>
+		);
 	}
 }
 
-export default connect(null, { setPage })(Home);
+export default connect(null, { setPage })(Discover);

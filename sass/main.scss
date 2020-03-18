@@ -1,5 +1,10 @@
 @import "base/base";
-@import "abstracts/utilities.scss";
+@import "abstracts/utilities";
 @import "components/navigation";
 @import "components/signup";
+@import "components/profile";
+@import "components/info";
+
 @import "pages/login_signup";
+@import "pages/home";
+@import "pages/discover";

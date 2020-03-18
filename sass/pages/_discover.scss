@@ -1,0 +1,48 @@
+.discover {
+	//top: 10%;
+
+	//transform: translateX(-50%) translateY(-50%);
+
+	position: relative;
+	padding-top: 10rem;
+	//background: linear-gradient(rgb(235, 235, 235), rgb(209, 209, 209));
+
+	//background: repeating-linear-gradient(0deg, blue, red 40px);
+	background: repeating-linear-gradient(90deg, #333 10%, #333 60%);
+
+	//background: repeating-linear-gradient(to right, red 0%, red 10%, green 10%, red 20%);
+
+	&-button {
+		display: inline-block;
+		//position: sticky;
+		position: fixed;
+		border: solid;
+
+		color: white;
+		font-size: 4rem;
+		padding: 2rem 7rem;
+		border-radius: 4px;
+		font-family: 'Josefin Sans', sans-serif;
+		background-color: white;
+		box-shadow: 0 2rem 1rem black;
+
+		&-like {
+			border: 1px solid green;
+			bottom: 3%;
+			right: 30%;
+			color: green;
+			transform: translateX(50%);
+			//background-color: green;
+		}
+
+		&-pass {
+			border: 1px solid red;
+			bottom: 3%;
+			color: red;
+			transform: translateX(-50%);
+			left: 30%;
+
+			//background-color: red;
+		}
+	}
+}

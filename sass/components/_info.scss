@@ -1,0 +1,11 @@
+.info {
+	height: 100%;
+	border: solid;
+	width: 50%;
+	display: inline-block;
+	overflow: hidden;
+
+	& h2 {
+		font-family: 'Josefin Sans', sans-serif;
+	}
+}

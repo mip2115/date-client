@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setAlert } from '../actions/alert';
 import { setAuth } from '../actions/auth';
+import { setPage } from '../actions/page';
 import axios from 'axios';
 import Signup from '../components/Signup';
 import Login from '../components/Login';
@@ -23,6 +24,9 @@ class Login_Signup extends Component {
 
 		//this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+	}
+	componentDidMount() {
+		//this.props.setPage('login');
 	}
 
 	handleToggle() {
@@ -125,7 +129,7 @@ const mapStateToProps = (state) => ({
 	alerts: state.alerts,
 	auth: state.auth
 });
-export default connect(mapStateToProps, { setAlert, setAuth })(Login_Signup);
+export default connect(mapStateToProps, { setAlert, setAuth, setPage })(Login_Signup);
 
 /**
  * <form onSubmit={this.handleSubmit}>

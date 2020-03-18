@@ -3,6 +3,9 @@ import axios from 'axios';
 import { CREATE_USER } from './config/routes';
 import Navigation from './components/Navigation';
 import Login_Signup from './containers/Login_Signup';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Home from './containers/Home';
+import Discover from './containers/Discover';
 import './css/style.css';
 
 class App extends Component {
@@ -80,10 +83,18 @@ class App extends Component {
 	}
 
 	render() {
+		console.log('HIST');
+		console.log(this.props.history);
 		return (
 			<div className="App">
 				<Navigation />
-				<Login_Signup />
+				<Router>
+					<Switch>
+						<Route history={this.props.history} path="/" exact component={Discover} />
+
+						<Route history={this.props.history} path="/login" exact component={Login_Signup} />
+					</Switch>
+				</Router>
 			</div>
 		);
 	}
