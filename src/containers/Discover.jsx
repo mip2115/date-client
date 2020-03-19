@@ -12,6 +12,8 @@ class Discover extends Component {
 	}
 
 	render() {
+		console.log('HIST');
+		console.log(this.props.history);
 		return (
 			<div className="discover">
 				<Profile />

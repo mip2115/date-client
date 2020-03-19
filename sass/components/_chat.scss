@@ -1,0 +1,20 @@
+.chat {
+	height: 100%;
+	position: relative;
+
+	&-display {
+		height: calc(100% - 4rem);
+	}
+
+	&-input {
+		border: solid;
+
+		overflow: hidden;
+
+		&-text {
+			width: 80%;
+
+			float: right;
+		}
+	}
+}

@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import Login_Signup from './containers/Login_Signup';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './containers/Home';
+import Messages from './containers/Messages';
 import Discover from './containers/Discover';
 import './css/style.css';
 
@@ -83,14 +84,13 @@ class App extends Component {
 	}
 
 	render() {
-		console.log('HIST');
-		console.log(this.props.history);
 		return (
 			<div className="App">
 				<Navigation />
 				<Router>
 					<Switch>
 						<Route history={this.props.history} path="/" exact component={Discover} />
+						<Route history={this.props.history} path="/messages" exact component={Messages} />
 
 						<Route history={this.props.history} path="/login" exact component={Login_Signup} />
 					</Switch>

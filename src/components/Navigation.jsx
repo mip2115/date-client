@@ -16,6 +16,11 @@ class Navigation extends Component {
 
 	handleClick(e) {
 		this.props.setPage(e.target.name);
+		if (this.props.auth.JWT != null) {
+			//this.props.setAuth(null, null);
+		} else {
+			//this.props.setAuth('null', 'null');
+		}
 
 		//this.props.history.push(e.target.name)
 		// console.log(e.target.name);

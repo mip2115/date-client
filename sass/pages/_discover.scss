@@ -16,31 +16,49 @@
 		display: inline-block;
 		//position: sticky;
 		position: fixed;
-		border: solid;
+		//border: 1px solid black;
+		cursor: pointer;
 
 		color: white;
 		font-size: 4rem;
-		padding: 2rem 7rem;
+		padding: .5rem 6rem;
+		//max-height: 5rem;
+		//height: 6rem;
+		//width: 12rem;
+		//text-align: center;
 		border-radius: 4px;
 		font-family: 'Josefin Sans', sans-serif;
 		background-color: white;
+		//filter: brightness(90%);
 		box-shadow: 0 2rem 1rem black;
 
 		&-like {
-			border: 1px solid green;
+			//border: 1px solid green;
 			bottom: 3%;
-			right: 30%;
+			right: 40%;
 			color: green;
 			transform: translateX(50%);
+			transition: all .25s;
+
+			&:hover {
+				background: green;
+				color: white;
+			}
 			//background-color: green;
 		}
 
 		&-pass {
-			border: 1px solid red;
+			//border: 1px solid red;
 			bottom: 3%;
 			color: red;
 			transform: translateX(-50%);
-			left: 30%;
+			left: 40%;
+			transition: all .25s;
+
+			&:hover {
+				background: red;
+				color: white;
+			}
 
 			//background-color: red;
 		}

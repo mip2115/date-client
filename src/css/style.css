@@ -117,11 +117,9 @@ font-family: 'Philosopher', sans-serif;
 }
 */
 .profile {
-  width: 60%;
-  display: block;
   margin: 0 auto;
   padding: 6rem 3rem;
-  background: linear-gradient(white, white);
+  background: linear-gradient(#fafafa, #fafafa);
   border-radius: 2px;
   position: relative; }
   .profile-header {
@@ -143,6 +141,54 @@ font-family: 'Philosopher', sans-serif;
   overflow: hidden; }
   .info h2 {
     font-family: 'Josefin Sans', sans-serif; }
+
+.contact {
+  cursor: pointer;
+  padding: .5rem 0rem; }
+  .contact:not(:last-child) {
+    border-bottom: 1px solid; }
+  .contact-ctr {
+    padding: .5rem .5rem; }
+    .contact-ctr:hover {
+      background-color: #ececec;
+      border-radius: 2px; }
+  .contact-unread {
+    font-weight: 700; }
+  .contact-time-read {
+    padding-top: .5rem;
+    font-size: .8rem;
+    font-weight: 300; }
+  .contact-time-unread {
+    padding-top: .5rem;
+    font-size: .8rem;
+    font-weight: 700; }
+
+.miniprofile-header {
+  font-size: 1.5rem;
+  padding: .5rem 1rem; }
+
+.miniprofile-info {
+  font-size: 1rem;
+  padding: 1rem 0; }
+
+.miniprofile-img {
+  text-align: center; }
+  .miniprofile-img img {
+    width: 20rem;
+    height: auto;
+    border-radius: 50%; }
+
+.chat {
+  height: 100%;
+  position: relative; }
+  .chat-display {
+    height: calc(100% - 4rem); }
+  .chat-input {
+    border: solid;
+    overflow: hidden; }
+    .chat-input-text {
+      width: 80%;
+      float: right; }
 
 .login-signup {
   position: relative;
@@ -262,23 +308,65 @@ font-family: 'Philosopher', sans-serif;
   .discover-button {
     display: inline-block;
     position: fixed;
-    border: solid;
+    cursor: pointer;
     color: white;
     font-size: 4rem;
-    padding: 2rem 7rem;
+    padding: .5rem 6rem;
     border-radius: 4px;
     font-family: 'Josefin Sans', sans-serif;
     background-color: white;
     box-shadow: 0 2rem 1rem black; }
     .discover-button-like {
-      border: 1px solid green;
       bottom: 3%;
-      right: 30%;
+      right: 40%;
       color: green;
-      transform: translateX(50%); }
+      transform: translateX(50%);
+      transition: all .25s; }
+      .discover-button-like:hover {
+        background: green;
+        color: white; }
     .discover-button-pass {
-      border: 1px solid red;
       bottom: 3%;
       color: red;
       transform: translateX(-50%);
-      left: 30%; }
+      left: 40%;
+      transition: all .25s; }
+      .discover-button-pass:hover {
+        background: red;
+        color: white; }
+
+.messages {
+  position: relative;
+  padding-top: 10rem;
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  width: 100%; }
+  .messages > div {
+    float: left; }
+    .messages > div:not(:last-child) {
+      border-right: 1px solid; }
+  .messages-contacts {
+    height: 100%;
+    max-width: 30rem;
+    min-width: 30rem;
+    padding: 1rem .5rem; }
+    .messages-contacts-search {
+      padding-bottom: 1rem; }
+      .messages-contacts-search input {
+        padding: .5rem;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.5rem;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid;
+        width: 100%; }
+    .messages-contacts-list {
+      padding-top: 2rem; }
+  .messages-display {
+    width: calc(100% - 60rem);
+    height: 100%; }
+  .messages-miniprofile {
+    height: 100%;
+    max-width: 30rem;
+    min-width: 30rem; }
